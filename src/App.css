@@ -1,26 +1,27 @@
+/* Ensure the root container takes the full viewport and centers content */
 #root {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
+  justify-content: center;
+  align-items: center;
   height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #f5f5f5; 
 }
 
+/* Ensure the calculator is centered properly */
 .calculator {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 400px;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Fixed width for proper alignment */
 }
-
 
 
 
