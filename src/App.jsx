@@ -187,12 +187,18 @@ function App() {
               {operator}
             </button>
           ))}
-        </div>
-        <h2 style={{ color: "#007BFF" }}>Result: {result !== null ? result : ""}</h2>
-      </div>
-    </div>
-  );
-}
+      <div className="calculator-container">
+  <h1>My Calculator</h1>
+  <input type="text" value={firstNumber} />
+  <input type="text" value={secondNumber} />
+  <div className="button-grid">
+    <button onClick={handleAdd}>+</button>
+    <button onClick={handleSubtract}>-</button>
+    <button onClick={handleMultiply}>*</button>
+    <button onClick={handleDivide}>/</button>
+  </div>
+  <p>Result: {result}</p>
+</div>
 
 export default App;
 
