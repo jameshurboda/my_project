@@ -123,37 +123,74 @@ function App() {
   }
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px", fontFamily: "Arial, sans-serif" }}>
-      <h1 style={{ color: "#333" }}>My Calculator</h1>
-      <div style={{ display: "inline-block", padding: "20px", borderRadius: "10px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", backgroundColor: "#f9f9f9" }}>
-        <input
-          type="number"
-          value={num1}
-          onChange={(e) => setNum1(e.target.value)}
-          placeholder="First number"
-          style={{ margin: "10px", padding: "10px", fontSize: "16px", borderRadius: "5px", border: "1px solid #ccc" }}
-        />
-        <input
-          type="number"
-          value={num2}
-          onChange={(e) => setNum2(e.target.value)}
-          placeholder="Second number"
-          style={{ margin: "10px", padding: "10px", fontSize: "16px", borderRadius: "5px", border: "1px solid #ccc" }}
-        />
-        <br />
-        <div>
-          {["+", "-", "*", "/"].map((operator) => (
-            <button
-              key={operator}
-              onClick={() => handleOperation(operator)}
-              style={{ margin: "10px", padding: "10px 20px", fontSize: "16px", borderRadius: "5px", border: "none", backgroundColor: "#007BFF", color: "white", cursor: "pointer" }}
-            >
-              {operator}
-            </button>
-          ))}
-        </div>
-        <h2 style={{ color: "#007BFF" }}>Result: {result !== null ? result : ""}</h2>
+    <div style={{ 
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      backgroundColor: 'white',
+      padding: '2rem',
+      borderRadius: '10px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      width: 'fit-content'
+    }}>
+      <h1 style={{ color: '#333', marginBottom: '1.5rem' }}>My Calculator</h1>
+      <input
+        type="number"
+        value={num1}
+        onChange={(e) => setNum1(e.target.value)}
+        placeholder="First number"
+        style={{
+          width: 'calc(100% - 20px)',
+          padding: '10px',
+          marginBottom: '1rem',
+          border: '1px solid #ccc',
+          borderRadius: '5px',
+          fontSize: '16px'
+        }}
+      />
+      <input
+        type="number"
+        value={num2}
+        onChange={(e) => setNum2(e.target.value)}
+        placeholder="Second number"
+        style={{
+          width: 'calc(100% - 20px)',
+          padding: '10px',
+          marginBottom: '1rem',
+          border: '1px solid #ccc',
+          borderRadius: '5px',
+          fontSize: '16px'
+        }}
+      />
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: '0.5rem',
+        margin: '1rem 0'
+      }}>
+        {["+", "-", "*", "/"].map((operator) => (
+          <button
+            key={operator}
+            onClick={() => handleOperation(operator)}
+            style={{
+              padding: '10px 20px',
+              fontSize: '16px',
+              border: 'none',
+              borderRadius: '5px',
+              backgroundColor: '#007BFF',
+              color: 'white',
+              cursor: 'pointer',
+              transition: 'background-color 0.2s'
+            }}
+          >
+            {operator}
+          </button>
+        ))}
       </div>
+      <p style={{ color: '#007BFF', fontSize: '1.2rem', marginTop: '1rem' }}>
+        Result: {result !== null ? result : ""}
+      </p>
     </div>
   );
 }
