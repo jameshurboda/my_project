@@ -122,9 +122,22 @@ function App() {
   }
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px", fontFamily: "Arial, sans-serif" }}>
-      <h1 style={{ color: "#333" }}>My Calculator</h1>
-      <div style={{ display: "inline-block", padding: "20px", borderRadius: "10px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", backgroundColor: "#f9f9f9" }}>
+    <div style={{ 
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      fontFamily: "Arial, sans-serif",
+      backgroundColor: "#f0f0f0"
+    }}>
+      <div style={{ 
+        textAlign: "center", 
+        padding: "20px", 
+        borderRadius: "10px", 
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", 
+        backgroundColor: "#f9f9f9" 
+      }}>
+        <h1 style={{ color: "#333" }}>My Calculator</h1>
         <input
           type="number"
           value={num1}
