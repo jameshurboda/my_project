@@ -93,6 +93,7 @@ export default App;
 */
 
 
+
 import { useState } from "react";
 
 function App() {
@@ -122,50 +123,22 @@ function App() {
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center", // Centers horizontally
-        alignItems: "center", // Centers vertically
-        height: "100vh", // Takes the full height of the viewport
-        backgroundColor: "#f0f0f0", // Light gray background for the entire page
-      }}
-    >
-      <div
-        style={{
-          textAlign: "center",
-          padding: "20px",
-          borderRadius: "10px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-          backgroundColor: "#ffffff", // White background for the calculator
-        }}
-      >
-        <h1 style={{ color: "#333" }}>My Calculator</h1>
+    <div style={{ textAlign: "center", marginTop: "50px", fontFamily: "Arial, sans-serif" }}>
+      <h1 style={{ color: "#333" }}>My Calculator</h1>
+      <div style={{ display: "inline-block", padding: "20px", borderRadius: "10px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", backgroundColor: "#f9f9f9" }}>
         <input
           type="number"
           value={num1}
           onChange={(e) => setNum1(e.target.value)}
           placeholder="First number"
-          style={{
-            margin: "10px",
-            padding: "10px",
-            fontSize: "16px",
-            borderRadius: "5px",
-            border: "1px solid #ccc",
-          }}
+          style={{ margin: "10px", padding: "10px", fontSize: "16px", borderRadius: "5px", border: "1px solid #ccc" }}
         />
         <input
           type="number"
           value={num2}
           onChange={(e) => setNum2(e.target.value)}
           placeholder="Second number"
-          style={{
-            margin: "10px",
-            padding: "10px",
-            fontSize: "16px",
-            borderRadius: "5px",
-            border: "1px solid #ccc",
-          }}
+          style={{ margin: "10px", padding: "10px", fontSize: "16px", borderRadius: "5px", border: "1px solid #ccc" }}
         />
         <br />
         <div>
@@ -173,34 +146,16 @@ function App() {
             <button
               key={operator}
               onClick={() => handleOperation(operator)}
-              style={{
-                margin: "10px",
-                padding: "10px 20px",
-                fontSize: "16px",
-                borderRadius: "5px",
-                border: "none",
-                backgroundColor: "#007BFF",
-                color: "white",
-                cursor: "pointer",
-              }}
+              style={{ margin: "10px", padding: "10px 20px", fontSize: "16px", borderRadius: "5px", border: "none", backgroundColor: "#007BFF", color: "white", cursor: "pointer" }}
             >
               {operator}
             </button>
           ))}
-      <div className="calculator-container">
-  <h1>My Calculator</h1>
-  <input type="text" value={firstNumber} />
-  <input type="text" value={secondNumber} />
-  <div className="button-grid">
-    <button onClick={handleAdd}>+</button>
-    <button onClick={handleSubtract}>-</button>
-    <button onClick={handleMultiply}>*</button>
-    <button onClick={handleDivide}>/</button>
-  </div>
-  <p>Result: {result}</p>
-</div>
+        </div>
+        <h2 style={{ color: "#007BFF" }}>Result: {result !== null ? result : ""}</h2>
+      </div>
+    </div>
+  );
+}
 
 export default App;
-
-export default App;
-
